@@ -1,0 +1,11 @@
+.contenitore {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: $sfondo;
+    .box-card {
+        width: 1200px;
+        margin: auto;
+        @include flex(space-around)
+    }
+}

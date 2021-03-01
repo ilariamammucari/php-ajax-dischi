@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenitore {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(#eeee, #000);
+}
+.contenitore .box-card {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
