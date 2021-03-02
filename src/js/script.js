@@ -8,13 +8,13 @@ var app = new Vue({
         valoreSelect: ''
     },
     mounted(){
-        axios.get('http://localhost/php-ajax-dischi/server.php').then(result => {
+        axios.get('server.php').then(result => {
             this.dischi = result.data;
             this.dischi.forEach(element => {
                 if ( !this.generi.includes(element.genere) ){
                     this.generi.push(element.genere);
                 }
             });
-        }).catch((error) => alert('errore'));;
+        }).catch((error) => alert('errore'));
     }
 });
