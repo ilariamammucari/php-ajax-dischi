@@ -14,14 +14,25 @@ __webpack_require__.r(__webpack_exports__);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#root',
   data: {
-    dischi: []
+    dischi: '',
+    generi: [],
+    valoreSelect: ''
   },
   mounted: function mounted() {
     var _this = this;
 
     axios.get('http://localhost/php-ajax-dischi/server.php').then(function (result) {
       _this.dischi = result.data;
+
+      _this.dischi.forEach(function (element) {
+        if (!_this.generi.includes(element.genere)) {
+          _this.generi.push(element.genere);
+        }
+      });
+    })["catch"](function (error) {
+      return alert('errore');
     });
+    ;
   }
 });
 

@@ -19,8 +19,12 @@
             <h1>Dischi musicali</h1>
         </header>
         <main>
-            <div class="box-card">
-                <div class="card" v-for="disco in dischi">
+            <select v-model="valoreSelect">
+                <option value="">Tutti i generi</option>
+                <option v-for="genere in generi" :value="genere">{{ genere }}</option>
+            </select>
+            <div class="box-card" v-if="dischi.length">
+                <div class="card" v-for="disco in dischi" v-if="disco.genere == valoreSelect || valoreSelect == ''">
                     <img :src="disco.img" alt="poster">
                     <h3 class="titolo-disco">{{ disco.titolo }}</h3>
                     <h4 class="nome-autore">{{ disco.autore }}</h4>
