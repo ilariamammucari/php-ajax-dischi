@@ -20,11 +20,11 @@
         </header>
         <main>
             <div class="box-card">
-                <div class="card">
-                    <img src="" alt="poster">
-                    <h3 class="titolo-disco"></h3>
-                    <h4 class="nome-autore"></h4>
-                    <h6 class="anno"></h6>
+                <div class="card" v-for="disco in dischi">
+                    <img :src="disco.img" alt="poster">
+                    <h3 class="titolo-disco">{{ disco.titolo }}</h3>
+                    <h4 class="nome-autore">{{ disco.autore }}</h4>
+                    <h6 class="anno">{{ disco.anno }}</h6>
                 </div>
             </div>
         </main>

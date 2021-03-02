@@ -13,9 +13,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: '#root',
-  data: {},
-  created: function created() {
-    alert();
+  data: {
+    dischi: []
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('http://localhost/php-ajax-dischi/server.php').then(function (result) {
+      _this.dischi = result.data;
+    });
   }
 });
 
